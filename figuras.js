@@ -59,13 +59,9 @@ const calcularPerimetroTriangulo = () => {
 }
 
 const calcularAreaTriangulo = () => {
-  const ladoA = document.getElementById("InputLadoA");
-  const value1 = Number(ladoA.value);
-  const ladoB = document.getElementById("InputLadoB");
-  const value2 = Number(ladoB.value);
   const base = document.getElementById("InputBase");
   const value3 = Number(base.value);
-  const altura = document.getElementById("InputBase");
+  const altura = document.getElementById("InputAltura");
   const value4 = Number(altura.value);
   
 
@@ -99,3 +95,33 @@ const calcularDiametro = () => {
   alert(diametr)
 }
 
+
+
+// Isosceles
+
+const calcularAltura = (ladoA, ladoB) => {
+  const h = Math.sqrt((ladoA ** 2) - (ladoB ** 2) / 4)
+  return h
+}
+
+const isosceles = (lado1, lado2, base) => {
+  if (lado1 === lado2 && lado1 != base && base > (lado1 + lado2) || lado1 > (base+lado2) || lado2 > (base+lado1)) {
+    return "Lo siento, esas medidas no corresponden a un triangulo"
+  } else if (lado1 === lado2 && lado1 != base) {
+    return calcularAltura(lado1, base)
+  } else {
+    return "Lo siento, no es un triangulo Isosceles"
+  }
+}
+
+const calcularIsosceles = () => {
+  const ladoA = document.getElementById("InputLadoA");
+  const value1 = Number(ladoA.value);
+  const ladoB = document.getElementById("InputLadoB");
+  const value2 = Number(ladoB.value);
+  const base = document.getElementById("InputBase");
+  const value3 = Number(base.value);
+
+  const isoscele = isosceles(value1, value2, value3)
+  alert(isoscele)
+}
