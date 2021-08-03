@@ -105,14 +105,17 @@ const calcularAltura = (ladoA, ladoB) => {
 }
 
 const isosceles = (lado1, lado2, base) => {
-  if (lado1 === lado2 && lado1 != base && base > (lado1 + lado2) || lado1 > (base+lado2) || lado2 > (base+lado1)) {
-    return "Lo siento, esas medidas no corresponden a un triangulo"
-  } else if (lado1 === lado2 && lado1 != base) {
-    return calcularAltura(lado1, base)
-  } else {
+  if (base < (lado1 + lado2) && lado1 < (base+lado2) && lado2 < (base+lado1)) {
+    if(lado1 === lado2 && lado1 != base){
+      return calcularAltura(lado1, base).toFixed(2)
+    } else {
     return "Lo siento, no es un triangulo Isosceles"
+    }
+  } else {
+  return "Lo siento, esas medidas no corresponden a un triangulo"
   }
 }
+
 
 const calcularIsosceles = () => {
   const ladoA = document.getElementById("InputLadoA");
