@@ -99,23 +99,39 @@ const calcularDiametro = () => {
 
 // Isosceles
 
-const calcularAltura = (ladoA, ladoB) => {
-  const h = Math.sqrt((ladoA ** 2) - (ladoB ** 2) / 4)
-  return h
-}
-
-const isosceles = (lado1, lado2, base) => {
-  if (base < (lado1 + lado2) && lado1 < (base+lado2) && lado2 < (base+lado1)) {
-    if(lado1 === lado2 && lado1 != base){
-      return calcularAltura(lado1, base).toFixed(2)
-    } else {
-    return "Lo siento, no es un triangulo Isosceles"
-    }
+const validacionTriangulo = (lado1, lado2, lado3) => {
+  if (lado3 < (lado1 + lado2) && lado1 < (lado3+lado2) && lado2 < (lado3+lado1)) {
+    return true
   } else {
-  return "Lo siento, esas medidas no corresponden a un triangulo"
+    return "esas medidas no corresponden a un triángulo"
   }
 }
 
+const calcularAlturaIsosceles = (ladoA, ladoB, ladoC) => {
+  if(ladoA === ladoB && ladoA != ladoC) {
+    const h = Math.sqrt((ladoA ** 2) - (ladoC ** 2) / 4) ||
+              Math.sqrt((ladoB ** 2) - (ladoC ** 2) / 4)
+    return `La altura del triangulo isosceles es ${h.toFixed(2)}`
+  } else if(ladoA === ladoC && ladoB != ladoC) {
+     const h = Math.sqrt((ladoA ** 2) - (ladoB ** 2) / 4) ||
+               Math.sqrt((ladoC ** 2) - (ladoB ** 2) / 4)
+     return `La altura del triangulo isosceles es ${h.toFixed(2)}`
+  } else if(ladoB === ladoC && ladoA != ladoB) {
+      const h = Math.sqrt((ladoB ** 2) - (ladoA ** 2) / 4) ||
+                Math.sqrt((ladoC ** 2) - (ladoA ** 2) / 4)
+      return `La altura del triangulo isosceles es ${h.toFixed(2)}`
+  } else {
+    return "no es un triangulo Isosceles"
+  }
+}
+
+const calculoIsosceles = (lado1, lado2, base) => {
+  if (validacionTriangulo(lado1, lado2, base) == true) {
+      return calcularAlturaIsosceles(lado1, lado2, base)
+    } else {
+    return validacionTriangulo(lado1, lado2, base)
+  }
+}
 
 const calcularIsosceles = () => {
   const ladoA = document.getElementById("InputLadoA");
@@ -125,6 +141,6 @@ const calcularIsosceles = () => {
   const base = document.getElementById("InputBase");
   const value3 = Number(base.value);
 
-  const isoscele = isosceles(value1, value2, value3)
+  const isoscele = calculoIsosceles(value1, value2, value3)
   alert(isoscele)
 }
