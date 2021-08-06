@@ -1,24 +1,3 @@
-const lista1 = [
-  100,
-  200,
-  300,
-  500
-]
-const lista2 = [
-  100,
-  200,
-  30330,
-  5030
-]
-const lista3 = [
-  222,
-  23300,
-  30440,
-  50660
-]
-
-const cantidadElementos = lista1.length
-
 let sumaLista = 0
 
 const calcularPromedio = (lista) => {
@@ -29,4 +8,30 @@ const calcularPromedio = (lista) => {
   const promedioLista = sumaLista / lista.length
   return promedioLista
 }
+
+let nuevaLista = []
+
+const calculoPromedio = () => {
+
+  const userList = document.getElementById("valorLista")
+  const value = userList.value
+  userList.value = ''  
+
+  const result = calcularPromedio(nuevaLista)
+  
+
+  console.log(result)
+}
+
+const agregarValorLista = (event) => {
+  event.preventDefault()
+
+  const userList = document.getElementById("valorLista")
+  const value = Number(userList.value)
+  userList.value = ''
+  
+  nuevaLista.push(value)
+  console.log(nuevaLista)
+}
+
 
