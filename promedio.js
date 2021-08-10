@@ -19,8 +19,7 @@ const calculoPromedio = () => {
 
   const result = calcularPromedio(nuevaLista)
   
-
-  console.log(result)
+  userLista.innerText = `El promedio es de ${result}`
 }
 
 const agregarValorLista = (event) => {
@@ -31,7 +30,7 @@ const agregarValorLista = (event) => {
   userList.value = ''
   
   nuevaLista.push(value)
+  userLista.innerText = `${nuevaLista}`;
   console.log(nuevaLista)
 }
-
 
