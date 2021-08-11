@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometrica</title>
+</head>
+<body>
+  <header>
+    <h1>
+      Geometrica
+      <p>Este es el tercer taller del Curso Práctico de JavaScrip</p>
+    </h1>
+  </header>
+
+  <section>
+    <h2>
+      Calcula ...
+    </h2>
+  <section>
+    <form action="">
+      <label for="valorLista" for="">
+        Escribe un nuevo valor a la lista
+      </label>
+      <input type="number" id="valorLista">
+    </form>
+    <button type="button" onclick="calculoGeometrica()">
+      Calcular Geometrica
+    </button>
+    <button type="button" onclick="agregarValorLista(event)">
+      Agregar valor a lista
+    </button>
+    <!-- <button type="button" onclick="borrarUltimoValor()">
+      Borrar último valor
+    </button>
+    <button type="button" onclick="borrarTodo()">
+      Borrar todo
+    </button> -->
+    <p id="resultGeometrica"></p>
+    <p id="userLista"></p>
+  </section>
+
+
+  <script src="./geometrica.js"></script>
+</body>
+</html>
