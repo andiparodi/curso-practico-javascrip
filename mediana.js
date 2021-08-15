@@ -9,13 +9,7 @@ const calcularPromedio = (lista) => {
 
 let nuevaLista = []
 
-const esPar = (n) => {
-  if(n % 2 === 0) {
-    return true
-  }else {
-    return false
-  }
-} 
+const esPar = (n) => n % 2 === 0
 
 
 const ordernarLista = (lista) => {
@@ -47,12 +41,11 @@ const calcMediana = () => {
   const mitadLista = parseInt(nuevaLista.length / 2)
 
   if(esPar(nuevaLista.length)) {
-  const elemento1 = nuevaLista[mitadLista - 1]
-  const elemento2 = nuevaLista[mitadLista] 
-  console.log(elemento1)
-  console.log(elemento2)
-  const result = calcularPromedio([elemento1, elemento2])
-  console.log(result)
+    const elemento1 = nuevaLista[mitadLista - 1]
+    const elemento2 = nuevaLista[mitadLista] 
+
+    const result = calcularPromedio([elemento1, elemento2])
+    console.log(result)
     
 
 } else {

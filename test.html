@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagate primero a ti mismo</title>
+</head>
+<body>
+  <head>
+    <h1>Pagate a ti mismo primero</h1>
+    <p>Aquí podras poner tus ingresos y elegir que % quieres que vaya a cada área de tu vida.</p>
+  </head>
+  <section>
+    <form action="">
+      <label for="salarioInput">Ingresa aquí tu salario</label>
+      <input id="salarioInput" type="number" min="0">
+      <button type="button" onclick="calculoPagate(event)">Calcula</button>
+
+      <p>Define tu área y su %?</p>
+
+      <label for="basicos">area</label>
+      <input id="basicos" type="text">
+      <p id="valorBasicos"></p>
+      
+      <label for="ocio">porcentaje</label>
+      <input id="ocio" type="number" min="0" placeholder="%">
+      <p id="valorOcio"></p>
+
+      <button type="button" onclick="agregarObjeto(event)">agregar</button>
+      <button type="button" onclick="testButton()">test</button>
+
+      <p id="listAreas"></p>
+
+
+    </form>
+  </section>
+
+
+
+
+  <script src="test.js"></script>
+</body>
+</html>
