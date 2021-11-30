@@ -1,0 +1,26 @@
+{
+  "name": "Curso Práctico de JavaScript",
+  "version": "1.0.0",
+  "description": "Proyecto en el cual se pone en práctica JS, SASS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andiparodi/curso-practico-javascrip.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andiparodi/curso-practico-javascrip/issues"
+  },
+  "homepage": "https://github.com/andiparodi/curso-practico-javascrip#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.43.4"
+  }
+}

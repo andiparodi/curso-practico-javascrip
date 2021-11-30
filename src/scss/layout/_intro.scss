@@ -1,0 +1,49 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.main-container {
+
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+
+  .title {
+    margin: 5rem 0;
+  }
+}
+.temas-container {
+  background-color: v.$light-yellow;
+  padding: 2rem;
+  min-width: 45rem;
+}
+  
+.temas {
+  margin: 0;
+  padding: 0;
+  .temas-grid {
+    @include m.grid(3,1fr);
+    gap: 1rem;
+  }
+  .tema-card {
+    padding: 1rem;
+    border: 1px solid v.$light-black;
+    background-color: v.$yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    text-align: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+.img-container {
+    margin-top: 5rem;
+
+    display: flex;
+    align-items: center;
+}
+.imagen-calc {
+  width: 40rem;
+}

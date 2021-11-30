@@ -1,0 +1,26 @@
+@use 'base/variables' as v;
+
+.header {
+ background-color: v.$light-black;
+ height: 10rem;
+ width: 100%;
+ 
+ nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    font-weight: bold;
+    color: v.$yellow;
+  }
+  .inicio {
+    font-size: 5rem;
+    color: v.$yellow;
+  } 
+  .user {
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+ }
+}

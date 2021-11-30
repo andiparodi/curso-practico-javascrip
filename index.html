@@ -4,47 +4,69 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Shippori+Antique&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./build/css/app.css">
   <title>Home</title>
 </head>
 <body>
-  <header>
-    <h1>Talleres del Curso Práctico de JavaScript</h1>
-    <p>Estos retos fueron desarrolador por Andrés Parodi</p>
+
+  <header class="header">
+    <nav class="container">
+      <a class="inicio" href="/">JS</a>
+      <a class="user" href="https://www.linkedin.com/in/andiparodi/" target="_blank">@andiparodi</a>
+    </nav>
   </header>
 
-  <section>
-    
-    <nav>
-      <ol>
-        <li>
-          <a href="./figuras.html">Taller #1</a>
-        </li>
+  <main class="container main-container">
+    <section>
+      <h1 class="title">Proyecto Práctico de JavaScript</h1>
+      <div class="temas-container">
+        <ul class="temas">
+          <h2>Temas vistos en este proyecto:</h2>
+          <div class="temas-grid">
+            <div class="tema-card">DOM</div>
+            <div class="tema-card">Arrays</div>
+            <div class="tema-card">Functions</div>
+            <div class="tema-card">HTML / SASS</div>
+            <div class="tema-card">Gulp</div>
+            <div class="tema-card">Animaciones</div>
+          </div>
+        </ul>    
+      </div>
+    </section>
+    <div class="img-container">
+      <img class="imagen-calc" src="./src/img/calc-img1.svg" alt="hombre y calculadora">
+    </div>
+  </main>
+     
+    <section class="container-talleres">
+      <div class="talleres-cards">
+        <div class="taller-card" onclick="location.href='./taller-1.html'">
+          <a href="">Taller #1 Figuras Geométricas</a>
+        </div>
 
-        <li>
-          <a href="./descuentos.html">Taller #2</a>
-        </li>
+        <div class="taller-card" onclick="location.href='./taller-2.html'">
+          <a href="./taller-2.html">Taller #2 Precios y Descuentos</a>
+        </div>
 
-        <li>
-          <a href="./promedio.html">Taller #3.a</a>
-        </li>
-
-        <li>
-          <a href="./mediana.html">Taller #3.b</a>
-        </li>
+        <div class="taller-card" onclick="location.href='./taller-3.html'">
+          <a href="./taller-3.html">Taller #3 Promedios, Moda y Mediana</a>
+        </div>
         
-        <li>
-          <a href="./moda.html">Taller #3.c</a>
-        </li>
+        <div class="taller-card" onclick="location.href='./taller-4.html'">
+          <a href="./taller-4.html">Taller #4 Análisis Salarial</a>
+        </div>
+      </div>
+    </section>
 
-        <li>
-          <a href="./salarios.html">Taller #4</a>
-        </li>
 
-        <li>
-          <a href="./test.html">Reto personal</a>
-        </li>
-      </ol>
-    </nav>
+  <footer class="container">
+   <p>Este es el footer</p>
+  </footer>
+  <section>
+
 
   </section>
 </body>
