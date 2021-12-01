@@ -4,7 +4,7 @@
  background-color: v.$light-black;
  height: 10rem;
  width: 100%;
- 
+
  nav {
   height: 100%;
   display: flex;
@@ -23,4 +23,16 @@
     font-size: 2rem;
   }
  }
+}
+
+nav a.user::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  display: block;
+  background: v.$yellow;
+  transition: 300ms;
+}
+nav a.user:hover::after {
+  width: 100%;
 }

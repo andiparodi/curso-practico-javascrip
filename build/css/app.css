@@ -55,7 +55,7 @@ img {
 }
 
 .header {
-  background-color: #2D2D2A;
+  background-color: #11110f;
   height: 10rem;
   width: 100%;
 }
@@ -78,34 +78,77 @@ img {
   font-size: 2rem;
 }
 
+nav a.user::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  display: block;
+  background: #FFD166;
+  transition: 300ms;
+}
+
+nav a.user:hover::after {
+  width: 100%;
+}
+
 .main-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 5rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .main-container {
+    width: 85%;
+    max-width: 120rem;
+    margin: 3rem auto 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1fr;
+    gap: 8rem;
+  }
 }
 .main-container .title {
-  margin: 5rem 0;
+  margin: 2rem 0 5rem;
+  text-align: center;
 }
 
 .temas-container {
   background-color: #fff1d1;
   padding: 2rem;
-  min-width: 45rem;
+  margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .temas-container {
+    min-width: 45rem;
+    margin: 0;
+  }
 }
 
 .temas {
   margin: 0;
   padding: 0;
 }
-.temas .temas-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1fr;
-  gap: 1rem;
+@media (min-width: 480px) {
+  .temas .temas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1fr;
+    gap: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .temas .temas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1fr;
+    gap: 1rem;
+  }
 }
 .temas .tema-card {
   padding: 1rem;
-  border: 1px solid #2D2D2A;
+  border: 1px solid #11110f;
   background-color: #FFD166;
   display: flex;
   justify-content: center;
@@ -114,67 +157,129 @@ img {
   text-align: center;
   font-size: 1.8rem;
   cursor: pointer;
+  transition: all 0.3s;
+}
+.temas .tema-card:hover {
+  background-color: #ffc94d;
+  transform: scale(1.03);
+}
+@media (min-width: 480px) {
+  .temas .tema-card:hover {
+    border: none;
+    background-color: #ffce5c;
+    transform: translateY(-2px);
+  }
 }
 
 .img-container {
-  margin-top: 5rem;
-  display: flex;
-  align-items: center;
+  display: none;
 }
 
-.imagen-calc {
-  width: 40rem;
-}
+@media (min-width: 992px) {
+  .img-container {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .imagen-calc {
+    width: 40rem;
+  }
+}
 .container-talleres {
+  width: 100%;
+}
+.container-talleres .title {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .container-talleres .title {
+    justify-content: initial;
+  }
+}
+.container-talleres h2 {
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.container-talleres h2::before {
+  content: "";
+  width: 0%;
+  height: 33px;
+  display: block;
+  background: #fff1d1;
+  transition: 300ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.container-talleres h2:hover::before {
   width: 100%;
 }
 @media (min-width: 768px) {
   .container-talleres {
     width: 85%;
     max-width: 120rem;
-    margin: 0 auto;
+    margin: 3rem auto 1rem;
   }
 }
 
 .talleres-cards {
   width: 100%;
-  height: 17rem;
-  margin-top: 10rem;
+  height: 100%;
 }
 @media (min-width: 768px) {
   .talleres-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1fr;
+    gap: 1rem;
   }
 }
 .talleres-cards .taller-card {
   min-width: 15rem;
-  border: 2px solid #2D2D2A;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: #FFD166;
   height: 100%;
   cursor: pointer;
-  margin-bottom: 0.4rem;
+  border: 1px solid black;
   transition: all 0.3s;
 }
 .talleres-cards .taller-card a {
-  color: #2D2D2A;
+  color: #11110f;
+}
+.talleres-cards .taller-card:hover {
+  background-color: #ffc94d;
+  transform: scale(1.03);
+  border: 2px solid black;
+}
+@media (min-width: 768px) {
+  .talleres-cards .taller-card:hover:hover {
+    border: none;
+    background-color: #ffce5c;
+    transform: translateY(-10px);
+  }
+}
+.talleres-cards .taller-card div h4 {
+  margin: 1rem 0;
+}
+.talleres-cards .taller-card div h3 {
+  margin-bottom: 1rem;
+}
+.talleres-cards .taller-card div p {
+  margin: 0;
+  font-size: 1.6rem;
 }
 
-.taller-card:hover {
-  background-color: #2D2D2A;
-  filter: invert(1);
-  border: none;
-}
-
-.taller-card:hover {
-  background-color: #FFD166;
-  transform: translatey(-10px);
-  color: #2D2D2A;
+footer {
+  background-color: #11110f;
+  height: 6rem;
+  width: 100%;
 }

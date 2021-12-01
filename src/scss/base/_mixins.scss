@@ -35,3 +35,9 @@
   padding: 0;
   list-style: none;
 }
+
+@mixin hover-efect-card($color, $value) {
+  border: none;
+  background-color: darken($color, 2%);
+  transform: translateY($value);
+}

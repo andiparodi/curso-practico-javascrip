@@ -2,27 +2,43 @@
 @use 'base/mixins' as m;
 
 .main-container {
-
-  display: flex;
-  justify-content: space-between;
-  gap: 5rem;
-
+  width: 100%;
+  @include m.tablet {
+    width: 85%;
+    max-width: 120rem;
+    margin: 3rem auto 1rem;
+  }
+  @include m.desktop { 
+    @include m.grid(2,1fr);   
+    gap: 8rem;
+  }
   .title {
-    margin: 5rem 0;
+    margin: 2rem 0 5rem;
+    text-align: center;
   }
 }
 .temas-container {
   background-color: v.$light-yellow;
   padding: 2rem;
-  min-width: 45rem;
+  margin-bottom: 5rem; 
+  @include m.tablet {
+    min-width: 45rem;
+    margin: 0;   
+  }
 }
   
 .temas {
   margin: 0;
   padding: 0;
   .temas-grid {
-    @include m.grid(3,1fr);
-    gap: 1rem;
+    @include m.phone {
+      @include m.grid(2,1fr);
+      gap: 1rem;
+    }
+    @include m.tablet {
+      @include m.grid(3,1fr);
+      gap: 1rem;      
+    }
   }
   .tema-card {
     padding: 1rem;
@@ -35,15 +51,29 @@
     text-align: center;
     font-size: 1.8rem;
     cursor: pointer;
+    transition: all 0.3s;
+    &:hover{
+      background-color: darken(v.$yellow, 5%);
+      transform: scale(1.03);
+     
+      @include m.phone {
+        @include m.hover-efect-card(v.$yellow, -2px)
+      }
+    }
   }
 }
 
 .img-container {
-    margin-top: 5rem;
-
-    display: flex;
-    align-items: center;
+  display: none;
 }
-.imagen-calc {
-  width: 40rem;
+ @include m.desktop {   
+  .img-container {
+      margin-top: 5rem;    
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .imagen-calc {
+    width: 40rem;
+  }
 }

@@ -1,0 +1,7 @@
+@use 'base/variables' as v;
+
+footer {
+  background-color: v.$light-black;
+  height: 6rem;
+  width: 100%;
+} 
