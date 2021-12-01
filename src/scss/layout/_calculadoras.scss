@@ -1,0 +1,26 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.title-calc {
+  margin: 3rem 0 2rem;
+}
+.title-form {
+  margin-bottom: 2rem;
+}
+.form-calc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container-calculadoras {
+  width: 100%;
+  @include m.tablet {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 85%;
+    max-width: 120rem;
+    margin: 0 auto; 
+  }
+}

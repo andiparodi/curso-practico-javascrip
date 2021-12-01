@@ -56,3 +56,31 @@ img {
   height: auto;
   display: block;
 }
+
+button {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  margin: 0.2rem 0;
+  background-color: v.$green;
+  border: 2px solid #090909;
+  font-family: v.$main-font;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 5px;
+  transition: all 0.2s;
+  &:hover {
+    box-shadow: 1px 1px 10px #3d501b; 
+  }
+}
+input {
+  padding-left: 10px;
+  margin: 5px 0 1rem;
+  height: 35px;
+  border: 1px solid #090909;
+}
+
+li {
+  list-style: none;
+}

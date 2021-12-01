@@ -54,6 +54,35 @@ img {
   display: block;
 }
 
+button {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  margin: 0.2rem 0;
+  background-color: #7BD389;
+  border: 2px solid #090909;
+  font-family: "Outfit", sans-serif, "Shippori Antique", sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 5px;
+  transition: all 0.2s;
+}
+button:hover {
+  box-shadow: 1px 1px 10px #3d501b;
+}
+
+input {
+  padding-left: 10px;
+  margin: 5px 0 1rem;
+  height: 35px;
+  border: 1px solid #090909;
+}
+
+li {
+  list-style: none;
+}
+
 .header {
   background-color: #11110f;
   height: 10rem;
@@ -282,4 +311,32 @@ footer {
   background-color: #11110f;
   height: 6rem;
   width: 100%;
+}
+
+.title-calc {
+  margin: 3rem 0 2rem;
+}
+
+.title-form {
+  margin-bottom: 2rem;
+}
+
+.form-calc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-calculadoras {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .container-calculadoras {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 85%;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
 }

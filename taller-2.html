@@ -4,41 +4,115 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Porcentajes y descuentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Shippori+Antique&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./build/css/app.css">
+  <title>Home</title>
 </head>
 <body>
-  <header>
-    <h1>
-      Porcentajes y descuentos
-      <p>Este es el segundo taller del Curso Práctico de JavaScrip</p>
-    </h1>
-  </header>
 
-  <section>
-    <h2>
-      Calcula el precio a pagar de tus productos con descuento
-    </h2>
-    <form action="">
-      <label for="precioOriginal" for="">
-        Precio del producto
-      </label>
-      <input type="number" id="precioOriginal">
-      <label for="valorDescuento">
-        ¿Que porcentaje de descuento tiene el producto?
-      </label>
-      <input type="number" id="valorDescuento">
-      <label for="inputCoupon">
-        Escribe aqui tu cupon con un descuento promocional
-      </label>
-      <input type="text" id="inputCoupon">
-      <p id="noValido"></p>
-    </form>
-    <button type="button" onclick="calculoDescuento()">Calcular descuento</button>
-    <p id="resultPrecio"></p>
+  <header class="header">
+    <nav class="container">
+      <a class="inicio" href="/">JS</a>
+      <a class="user" href="https://www.linkedin.com/in/andiparodi/" target="_blank">@andiparodi</a>
+    </nav>
+  </header>
+  
+  <div class="container container-calc">
+    <h1 class="title-calc">Porcentajes y descuentos</h1>
+    <p>Este es el segundo taller del Curso Práctico de JavaScrip</p>
+  </div>
+
+  <div class="container container-calculadoras">
+    <section class="container container-calc">
+      <h2 class="title-form">
+        Calcula el precio a pagar de tus productos con descuento
+      </h2>
+      <form class="form-calc" action="">
+        <label for="precioOriginal">
+          Precio del producto
+        </label>
+        <input type="number" id="precioOriginal">
+        <label for="valorDescuento">
+          ¿Que porcentaje de descuento tiene el producto?
+        </label>
+        <input type="number" id="valorDescuento">
+        <label for="inputCoupon">
+          Escribe aqui tu cupon con un descuento promocional
+        </label>
+        <input type="text" id="inputCoupon">
+        <p id="noValido"></p>
+      </form>
+      <button type="button" onclick="calculoDescuento()">Calcular descuento</button>
+      <p id="resultPrecio"></p>
+    </section>
+
+    <section>
+      <h2>Lista de Cupones disponibles</h2>
+      <ul>
+        <li>Cupon10</li>
+        <li>Cupon15</li>
+        <li>Cupon20</li>
+        <li>Cupon25</li>
+      </ul>
+    </section>
+    
+  </div>
+  
+
+  <section class="container-talleres">
+    <div class="title">
+      <h2>Calculadoras</h2>
+    </div>
+    <div class="talleres-cards">
+      <div class="taller-card" onclick="location.href='./taller-1.html'">
+        <div>
+          <header>
+              <h4>TALLER #1</h4>
+              <h3>Figuras Geometricas</h3>
+          </header>
+          <p>Cálculo básico para figuras geometricas.</p>
+        </div>
+      </div>
+
+      <div class="taller-card" onclick="location.href='./taller-2.html'">
+        <div>
+          <header>
+              <h4>TALLER #2</h4>
+              <h3>Precios y descuentos</h3>
+          </header>
+          <p>Cálculo básicos para precios, descuentos.</p>
+        </div>
+      </div>
+
+      <div class="taller-card" onclick="location.href='./taller-3.html'">
+        <div>
+          <header>
+              <h4>TALLER #3</h4>
+              <h3>Promedios</h3>
+          </header>
+          <p>Cálculos básicos y avanzados.</p>
+        </div>
+      </div>
+      
+      <div class="taller-card" onclick="location.href='./taller-4.html'">
+        <div>
+          <header>
+              <h4>TALLER #4</h4>
+              <h3>Análisis Salarial</h3>
+          </header>
+          <p>Calculo básicos para trabajar con salarios.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
 
-
+  <footer>
+    <p>Este es el footer</p>
+  </footer>
+  
   <script src="./src/js/taller-2.js"></script>
-</body>
+  </body>
 </html>
