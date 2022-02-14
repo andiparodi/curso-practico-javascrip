@@ -88,3 +88,25 @@
   color: red;
   font-size: 1.8rem
 }
+
+.result-calc {
+  @include m.hover-efect-card(v.$yellow, -10px);
+  text-align: center;
+}
+
+.btn-remove {
+  background-color: v.$light-yellow;
+}
+
+.btn-add {
+  background-color: v.$light-blue;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  
+  label {
+    margin: 1.5rem 0 0.5rem;
+  }
+} 

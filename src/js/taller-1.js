@@ -6,9 +6,6 @@ const areaCuadrado = (lado) => lado ** 2;
 
 //código del triángulo 
 
-const perimetroTriangulo = (lado1, lado2, base) => lado1 + lado2 + base;
-
-const areaTriangulo = (base, altura) => (base * altura) / 2;
 
 //código círculo
 
@@ -30,7 +27,7 @@ const calcularPerimetroCuadrado = () => {
   const value = input.value;
 
   const perimetro = perimetroCuadrado(value);
-  alert(perimetro)
+  resultCuadrado.innerText = `El prímetro del cuadrado es de ${perimetro}`
 }
 
 const calcularAreaCuadrado = () => {
@@ -38,12 +35,36 @@ const calcularAreaCuadrado = () => {
   const value = input.value;
 
   const area = areaCuadrado(value);
-  alert(area)
+  resultCuadrado.innerText = `El área del cuadrado es de ${area}`
 }
 
 // Triángulo
 
+const validacionTriangulo = (lado1, lado2, lado3) => {
+  if (lado3 < (lado1 + lado2) && lado1 < (lado3+lado2) && lado2 < (lado3+lado1)) {
+    return true
+  } else {
+    return "Esas medidas no corresponden a un triángulo"
+  }
+}
+// Perimetro triangulo
+
+const perimetroTriangulo = (lado1, lado2, base) => {
+  const result = lado1 + lado2 + base
+
+  return `El perímetro del triangulo es de ${result}`
+}
+
+const calculoPerimetro = (lado1, lado2, base) => {
+  if (validacionTriangulo(lado1, lado2, base) == true) {
+      return perimetroTriangulo(lado1, lado2, base)
+    } else {
+    return validacionTriangulo(lado1, lado2, base)
+  }
+}
+
 const calcularPerimetroTriangulo = () => {
+  
   const ladoA = document.getElementById("InputLadoA");
   const value1 = Number(ladoA.value);
   const ladoB = document.getElementById("InputLadoB");
@@ -54,9 +75,17 @@ const calcularPerimetroTriangulo = () => {
   const value4 = Number(altura.value);
   
 
-  const perimetro = perimetroTriangulo(value1, value2, value3);
-  alert(perimetro)
+  const perimetro = calculoPerimetro(value1, value2, value3);
+  resultTriangulo.innerText = `${perimetro}`
 }
+
+// Area triangulo
+
+const areaTriangulo = (base, altura) => {
+  const result = (base * altura) / 2
+
+  return `El área del triangulo es de ${result}`
+} 
 
 const calcularAreaTriangulo = () => {
   const base = document.getElementById("InputBase");
@@ -66,46 +95,10 @@ const calcularAreaTriangulo = () => {
   
 
   const area = areaTriangulo(value3, value4);
-  alert(area)
+  resultTriangulo.innerText = `${area}`
 }
-
-// Circulo
-
-const calcularCircunsferencia = () => {
-  const input = document.getElementById("InputCirculo");
-  const value =  input.value;
-
-  const perimetro = circunsferencia(value);
-  alert(perimetro)
-}
-
-const calcularAreaCirculo = () => {
-  const input = document.getElementById("InputCirculo");
-  const value =  input.value;
-
-  const area = areaCirculo(value);
-  alert(area)
-}
-
-const calcularDiametro = () => {
-  const input = document.getElementById("InputCirculo");
-  const value =  input.value;
-
-  const diametr = diametro(value);
-  alert(diametr)
-}
-
-
 
 // Isosceles
-
-const validacionTriangulo = (lado1, lado2, lado3) => {
-  if (lado3 < (lado1 + lado2) && lado1 < (lado3+lado2) && lado2 < (lado3+lado1)) {
-    return true
-  } else {
-    return "esas medidas no corresponden a un triángulo"
-  }
-}
 
 const calcularAlturaIsosceles = (ladoA, ladoB, ladoC) => {
   if(ladoA === ladoB && ladoA != ladoC) {
@@ -121,7 +114,7 @@ const calcularAlturaIsosceles = (ladoA, ladoB, ladoC) => {
                 Math.sqrt((ladoC ** 2) - (ladoA ** 2) / 4)
       return `La altura del triangulo isosceles es ${h.toFixed(2)}`
   } else {
-    return "no es un triangulo Isosceles"
+    return "Estas medidas no corresponden a un triangulo Isosceles"
   }
 }
 
@@ -142,5 +135,36 @@ const calcularIsosceles = () => {
   const value3 = Number(base.value);
 
   const isoscele = calculoIsosceles(value1, value2, value3)
-  alert(isoscele)
+  resultTriangulo.innerText = `${isoscele}`
 }
+
+
+
+
+// Circulo
+
+const calcularCircunsferencia = () => {
+  const input = document.getElementById("InputCirculo");
+  const value =  input.value;
+
+  const perimetro = circunsferencia(value);
+  resultCirculo.innerText = `El perímetro del círculo es de ${perimetro}`
+}
+
+const calcularAreaCirculo = () => {
+  const input = document.getElementById("InputCirculo");
+  const value =  input.value;
+
+  const area = areaCirculo(value);
+  resultCirculo.innerText = `El área del círculo es de ${area}`
+}
+
+const calcularDiametro = () => {
+  const input = document.getElementById("InputCirculo");
+  const value =  input.value;
+
+  const diametr = diametro(value);
+  resultCirculo.innerText = `El diámetro del círculo es de ${diametr}`
+}
+
+

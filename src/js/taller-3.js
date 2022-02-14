@@ -6,15 +6,15 @@ function switchFormula () {
   cleanError('form');
   switch (f) {
       case '1':
-          btn.setAttribute('onclick', 'calcularPromedio()');
-          btn.innerText = 'Calcular Promedio'
+          btn.setAttribute('onclick', 'calculoPromedio()');
+          btn.innerText = 'Calcular Media Aritmética'
           break;
       case '2':
-          btn.setAttribute('onclick', 'calcArmonica()');
+          btn.setAttribute('onclick', 'calculoArmonica()');
           btn.innerText = 'Calcular Media Armonica'
           break;
       case '3':
-          btn.setAttribute('onclick', 'calcularGeometrica();');
+          btn.setAttribute('onclick', 'calculoGeometrica();');
           btn.innerText = 'Calcular Media Geometrica'
           break;
       case '4':
@@ -108,9 +108,41 @@ const calculoPromedio = () => {
 
   const result = calcularPromedio(nuevaLista)
   
-  resultPromedio.innerText = `El promedio es de ${result}`
+  resultCalc.innerText = `La media aritmética es de ${result}`
 }
 
+//----------------------> Armonica
+const calcArmonica = (lista) => {
+  const sumaList = lista.reduce(
+    (valorAcumulado, nuevoElemento) => valorAcumulado + (1 / nuevoElemento), 0
+);
+
+const mediaArmonica = lista.length / sumaList;
+return parseFloat(mediaArmonica.toFixed(3));
+} 
+
+const calculoArmonica = () => {
+  const result = calcArmonica(nuevaLista)
+  resultCalc.innerText = `La armónica de la lista es de ${result}`;
+}
+
+// ----------------------> Geometrica
+
+const calcularGeometrica = () => {
+  const productoElementos = nuevaLista.reduce(
+    (elementoAcumulado, elementoIterado) => { 
+    return elementoAcumulado * elementoIterado
+    }, 1
+)
+   const mediaGeometrica = productoElementos ** (1/nuevaLista.length);
+   return parseFloat(mediaGeometrica.toFixed(3));
+}
+
+const calculoGeometrica = () => {
+  const result = calcularGeometrica(nuevaLista)
+
+  resultCalc.innerText = `la geométrica de la lista es de ${result}`;
+}
 
 // ----------------------> Mediana
 
@@ -138,11 +170,11 @@ const calcMediana = () => {
     const mediana = calcularPromedio([elemento1, elemento2])
     console.log(mediana)
     
-    resultMediana.innerText = `La mediana es de ${mediana}`
+    resultCalc.innerText = `La mediana es de ${mediana}`
 
   } else {
     const mediana = nuevaLista[mitadLista]
-    resultMediana.innerText = `La mediana es de ${mediana}`    
+    resultCalc.innerText = `La mediana es de ${mediana}`    
   }
 }
 
@@ -167,39 +199,7 @@ const calculoModa = () => {
 
   const moda = listaArray[listaArray.length - 1]
 
-  resultModa.innerText = `La moda en esta lista es de ${moda[0]}`;
+  resultCalc.innerText = `La moda en esta lista es de ${moda[0]}`;
 }
 
 
-//----------------------> Armonica
-const calcArmonica = (lista) => {
-  const sumaList = lista.reduce(
-    (valorAcumulado, nuevoElemento) => valorAcumulado + (1 / nuevoElemento), 0
-);
-
-const mediaArmonica = lista.length / sumaList;
-return parseFloat(mediaArmonica.toFixed(3));
-} 
-
-const calculoArmonica = () => {
-  const result = calcArmonica(nuevaLista)
-  resultArmonica.innerText = `La armónica de la lista es de ${result}`;
-}
-
-// // ----------------------> Geometrica
-
-const calcularGeometrica = () => {
-  const productoElementos = nuevaLista.reduce(
-    (elementoAcumulado, elementoIterado) => { 
-    return elementoAcumulado * elementoIterado
-    }, 1
-)
-   const mediaGeometrica = productoElementos ** (1/nuevaLista.length);
-   return parseFloat(mediaGeometrica.toFixed(3));
-}
-
-const calculoGeometrica = () => {
-  const result = calcularGeometrica(nuevaLista)
-
-  resultGeometrica.innerText = `la geométrica de la lista es de ${result}`;
-}

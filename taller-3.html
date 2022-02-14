@@ -21,7 +21,7 @@
 
   <div class="container container-calc">
     <h1>
-      Promedio, Moda y Mediana
+      Promedios, Moda y Mediana
       <p>Este es el tercer taller del Curso Práctico de JavaScrip</p>
     </h1>
   </div>
@@ -48,7 +48,7 @@
             Escribe un <strong>Nuevo Valor</strong> a la lista
           </label>
           <input type="number" id="valorLista">
-          <button type="button" onclick="agregarValorLista(event)" min="0">
+          <button class="btn-add" type="button" onclick="agregarValorLista(event)" min="0">
             Agregar valor a lista
           </button>
           <p class="error" id="errorAddValue"></p>
@@ -58,18 +58,14 @@
           <label for="inputDiscount">Escribe la <strong>Posición</strong> del valor a Eliminar de la lista</label>
           <input type="number" id="removeValue">
           <p class="error" id="errorRemoveValue"></p>
-          <button type="button" onclick="quitarValor()"> Quitar de la lista</button>
+          <button class="btn-remove"type="button" onclick="quitarValor()"> Quitar de la lista</button>
         </div>
       </form>
     
       <button id="btn-render" type="button" onclick="calculoPromedio()"> Calcular Promedio</button>
       
-      <p id="resultPromedio"></p>
-      <p id="resultMediana"></p>
-      <p id="resultModa"></p>
-      <p id="resultArmonica"></p>
-      <p id="resultGeometrica"></p>
-      
+      <p class="result-calc" id="resultCalc"></p>
+     
     </div>
     
     <div class="container">

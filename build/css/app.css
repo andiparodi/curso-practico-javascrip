@@ -58,7 +58,7 @@ button {
   cursor: pointer;
   display: inline-block;
   width: 100%;
-  margin: 0.2rem 0;
+  margin: 0.5rem 0;
   background-color: #7BD389;
   border: 2px solid #090909;
   font-family: "Outfit", sans-serif, "Shippori Antique", sans-serif;
@@ -310,6 +310,29 @@ nav a.user:hover::after {
   margin: 0;
   color: red;
   font-size: 1.8rem;
+}
+
+.result-calc {
+  border: none;
+  background-color: #ffce5c;
+  transform: translateY(-10px);
+  text-align: center;
+}
+
+.btn-remove {
+  background-color: #fff1d1;
+}
+
+.btn-add {
+  background-color: #5BC0EB;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin: 1.5rem 0 0.5rem;
 }
 
 footer {
