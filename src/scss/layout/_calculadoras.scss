@@ -5,9 +5,7 @@
 .title-calc {
   margin: 3rem 0 2rem;
 }
-.title-form {
-  margin-bottom: 2rem;
-}
+
 .form-calc {
   display: flex;
   flex-direction: column;
@@ -18,9 +16,28 @@
   @include m.tablet {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
     width: 85%;
     max-width: 120rem;
     margin: 0 auto; 
+  }
+}
+
+.container-taller2 {
+  @include m.tablet {
+    width: auto;
+  }
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  padding: 1rem;
+  height: 100%;
+  margin-bottom: 5rem;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
   }
 }

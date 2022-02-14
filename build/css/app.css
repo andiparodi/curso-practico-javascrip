@@ -32,7 +32,7 @@ a {
 }
 
 h1, h2, h3 {
-  margin: 0 0 5rem 0;
+  margin: 2rem 0 1rem 0;
 }
 
 h1 {
@@ -230,7 +230,6 @@ nav a.user:hover::after {
 }
 .container-talleres h2 {
   text-transform: uppercase;
-  margin-bottom: 3rem;
   position: relative;
 }
 .container-talleres h2::before {
@@ -307,6 +306,12 @@ nav a.user:hover::after {
   font-size: 1.6rem;
 }
 
+.error {
+  margin: 0;
+  color: red;
+  font-size: 1.8rem;
+}
+
 footer {
   background-color: #11110f;
   height: 6rem;
@@ -315,10 +320,6 @@ footer {
 
 .title-calc {
   margin: 3rem 0 2rem;
-}
-
-.title-form {
-  margin-bottom: 2rem;
 }
 
 .form-calc {
@@ -334,9 +335,30 @@ footer {
   .container-calculadoras {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
     width: 85%;
     max-width: 120rem;
     margin: 0 auto;
   }
+}
+
+.container-taller2 {
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  padding: 1rem;
+  height: 100%;
+  margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .container-taller2 {
+    width: auto;
+  }
+}
+.container-taller2 h2 {
+  margin-bottom: 1rem;
+}
+.container-taller2 ul {
+  margin: 0;
+  padding: 0;
 }

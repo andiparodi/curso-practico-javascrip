@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Shippori+Antique&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./build/css/app.css">
-  <title>Home</title>
+  <title>Taller #3</title>
 </head>
 <body>
 
@@ -18,135 +18,131 @@
       <a class="user" href="https://www.linkedin.com/in/andiparodi/" target="_blank">@andiparodi</a>
     </nav>
   </header>
-  <div>
+
+  <div class="container container-calc">
     <h1>
       Promedio, Moda y Mediana
       <p>Este es el tercer taller del Curso Práctico de JavaScrip</p>
     </h1>
   </div>
+  
+  <header class="container">
+    <h2>Cálculos:</h2>
+    <div class="select">
+        <select class="" id="formulaSelect" name="select" onchange="switchFormula();">
+            <option value="1" selected>Media Aritmetica</option>
+            <option value="2">Media Armonica</option>
+            <option value="3">Media Geometrica</option>
+            <option value="4">Moda</option>
+            <option value="5">Mediana</option>
+        </select>
+    </div>
+  </header>
 
-  <section>
-    <h2>
-      Calcula Promedio
-    </h2>
-  <section>
-    <form action="">
-      <label for="valorLista" for="">
-        Escribe un nuevo valor a la lista
-      </label>
-      <input type="number" id="valorLista">
-    </form>
-    <button type="button" onclick="calculoPromedio()">
-      Calcular promedio
-    </button>
-    <button type="button" onclick="agregarValorLista(event)">
-      Agregar valor a lista
-    </button>
-    <!-- <button type="button" onclick="borrarUltimoValor()">
-      Borrar último valor
-    </button>
-    <button type="button" onclick="borrarTodo()">
-      Borrar todo
-    </button> -->
-    <p id="resultPromedio"></p>
-    <p id="userLista"></p>
-  </section>
+  <section class="container container-calculadoras">
+       
+    <div class="container">
+      <form id="form">
+        <div class="form-group">
+          <label for="valorLista">
+            Escribe un <strong>Nuevo Valor</strong> a la lista
+          </label>
+          <input type="number" id="valorLista">
+          <button type="button" onclick="agregarValorLista(event)" min="0">
+            Agregar valor a lista
+          </button>
+          <p class="error" id="errorAddValue"></p>
+        </div>
 
-  <!------- Mediana -->
+        <div class="form-group">
+          <label for="inputDiscount">Escribe la <strong>Posición</strong> del valor a Eliminar de la lista</label>
+          <input type="number" id="removeValue">
+          <p class="error" id="errorRemoveValue"></p>
+          <button type="button" onclick="quitarValor()"> Quitar de la lista</button>
+        </div>
+      </form>
+    
+      <button id="btn-render" type="button" onclick="calculoPromedio()"> Calcular Promedio</button>
+      
+      <p id="resultPromedio"></p>
+      <p id="resultMediana"></p>
+      <p id="resultModa"></p>
+      <p id="resultArmonica"></p>
+      <p id="resultGeometrica"></p>
+      
+    </div>
+    
+    <div class="container">
+      <h3>Lista de Valores cargados</h2>
+      <ul id="userLista"></ul>
+    </div>
 
-
-  <!-- <section>
-    <h2>
-      Calcula Mediana
-    </h2>
-  <section>
-    <form action="">
-      <label for="valorLista" for="">
-        Escribe un nuevo valor a la lista
-      </label>
-      <input type="number" id="valorLista">
-    </form>
-    <button type="button" onclick="calcMediana()">
-      Calcular mediana
-    </button>
-    <button type="button" onclick="agregarValorLista(event)">
-      Agregar valor a lista
-    </button>
-
-    <p id="resultmediana"></p>
-    <p id="userLista"></p>
-  </section> -->
+  </section> 
 
   <!------- Moda -->
 
 
-  <!-- <section>
-    <h2>
-      Calcula Moda
-    </h2>
-  <section>
-    <form action="">
-      <label for="valorLista" for="">
-        Escribe un nuevo valor a la lista
-      </label>
-      <input type="number" id="valorLista">
-    </form>
-    <button type="button" onclick="calculoModa()">
-      Calcular moda
-    </button>
-    <button type="button" onclick="agregarValorLista(event)">
-      Agregar valor a lista
-    </button>
-    <p id="resultModa"></p>
-    <p id="userLista"></p>
-  </section> -->
-
 
 <!-- ----- Geometrica -->
 
- <!-- <section>
-  <h2>
-    Calcula Geometrica
-  </h2>
-<section>
-  <form action="">
-    <label for="valorLista" for="">
-      Escribe un nuevo valor a la lista
-    </label>
-    <input type="number" id="valorLista">
-  </form>
-  <button type="button" onclick="calculoGeometrica()">
-    Calcular Geometrica
-  </button>
-  <button type="button" onclick="agregarValorLista(event)">
-    Agregar valor a lista
-  </button>
-  <p id="resultGeometrica"></p>
-  <p id="userLista"></p>
-</section> -->
+
+
+
 
 <!-- ----- Armonica -->
-<!-- 
-<section>
-  <h2>
-    Calcula Armonica
-  </h2>
-<section>
-  <form action="">
-    <label for="valorLista" for="">
-      Escribe un nuevo valor a la lista
-    </label>
-    <input type="number" id="valorLista">
-  </form>
-  <button type="button" onclick="calculoArmonica()">
-    Calcular Armonica
-  </button>
-  <button type="button" onclick="agregarValorLista(event)">
-    Agregar valor a lista
-  </button>
-  <p id="resultArmonica"></p>
-  <p id="userLista"></p>
-</section> -->
+
+</section> 
+
+<section class="container-talleres">
+  <div class="title">
+    <h2>Calculadoras</h2>
+  </div>
+  <div class="talleres-cards">
+    <div class="taller-card" onclick="location.href='./taller-1.html'">
+      <div>
+        <header>
+            <h4>TALLER #1</h4>
+            <h3>Figuras Geometricas</h3>
+        </header>
+        <p>Cálculo básico para figuras geometricas.</p>
+      </div>
+    </div>
+
+    <div class="taller-card" onclick="location.href='./taller-2.html'">
+      <div>
+        <header>
+            <h4>TALLER #2</h4>
+            <h3>Precios y descuentos</h3>
+        </header>
+        <p>Cálculo básicos para precios, descuentos.</p>
+      </div>
+    </div>
+
+    <div class="taller-card" onclick="location.href='./taller-3.html'">
+      <div>
+        <header>
+            <h4>TALLER #3</h4>
+            <h3>Promedios</h3>
+        </header>
+        <p>Cálculos básicos y avanzados.</p>
+      </div>
+    </div>
+    
+    <div class="taller-card" onclick="location.href='./taller-4.html'">
+      <div>
+        <header>
+            <h4>TALLER #4</h4>
+            <h3>Análisis Salarial</h3>
+        </header>
+        <p>Calculo básicos para trabajar con salarios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Este es el footer</p>
+ </footer>
 
 
   <script src="./src/js/taller-3.js"></script>
